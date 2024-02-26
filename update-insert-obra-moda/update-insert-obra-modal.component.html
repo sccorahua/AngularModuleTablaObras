@@ -1,0 +1,85 @@
+<form [formGroup]="form">
+    
+    <div>
+        <mat-form-field style="width: 100%;">
+            <mat-label>ID Obra</mat-label>
+            <input matInput #input required minlength="6" maxlength="6" placeholder="" formControlName="idObra">
+            <mat-hint align="end">{{input.value.length}}/6</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field style="width: 100%;">
+            <mat-label>Nombre</mat-label>
+            <input matInput #input required maxlength="255" placeholder="" formControlName="nomObra">
+            <!-- <mat-hint align="end">{{input.value.length}}/6</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field style="width: 100%;">
+            <mat-label>Access IP Obra</mat-label>
+            <input matInput #input required maxlength="150" placeholder="" formControlName="accessIpObra">
+            <!-- <mat-hint align="end">{{input.value.length}}/150</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field style="width: 100%;">
+            <mat-label>Direccion</mat-label>
+            <input matInput #input required maxlength="255" placeholder="" formControlName="direcObra">
+            <!-- <mat-hint align="end">{{input.value.length}}/255</mat-hint> -->
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <mat-form-field style="margin-right: 1em;" style="width: 45%; margin-right: 10%;">
+            <mat-label>RUC</mat-label>
+            <input matInput #inputRUC required type="number" maxlength="11" minlength="11" placeholder="" formControlName="RUC">
+            <mat-hint align="end">{{inputRUC.value.length}}/11</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field style="margin-right: 1em;" style="width: 45%;">
+            <mat-label>Director</mat-label>
+            <input matInput #input required maxlength="255" placeholder="" formControlName="director">
+            <!-- <mat-hint align="end">{{inputDirector.value.length}}/255</mat-hint> -->
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field style="margin-right: 1em;" style="width: 45%; margin-right: 10%;">
+            <mat-label>Contabilidad debe</mat-label>
+            <input matInput #inputCtaDebe required maxlength="45" placeholder="" formControlName="contDebe">
+        </mat-form-field>
+
+        <mat-form-field style="margin-right: 1em;" style="width: 45%;">
+            <mat-label>Contabilidad haber</mat-label>
+            <input matInput #inputCtaHaber required maxlength="45" placeholder="" formControlName="contHaber">
+        </mat-form-field>
+    </div>
+
+    <div id="divLogo">
+        <label id="textBtnLogo">Elegir un logo para sigmaWeb</label>
+        <input (change)="ObtLogoImagen($event)" type="file" accept=".png" id="btnLogo"/>
+    </div>
+
+    <div class="center-items" id="divPrevisualizacion" *ngIf="logoPrevisualizacion">
+        <img width="50%" [src]="logoPrevisualizacion" aria-placeholder="Imagen a cargar"/>
+    </div>
+
+    <div id="divLogoReport">
+        <label id="textBtnLogoReport">Elegir un logo para reporte</label>
+        <input (change)="ObtLogoImagenReport($event)" type="file" accept=".png" id="btnLogoReport"/>
+    </div>
+
+    <div class="center-items" id="divPrevisualizacionReport" *ngIf="logoPrevisualizacionReport">
+        <img width="50%" [src]="logoPrevisualizacionReport" aria-placeholder="Imagen a cargar"/>
+    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    <div style="margin-top: 2em;">
+          <button mat-raised-button color="primary" (click)="guardarObr()">
+            <label *ngIf="obrActualiza">Actualizar</label>
+            <label *ngIf="!obrActualiza">Registrar</label>
+          </button>
+    </div>
+</form>
