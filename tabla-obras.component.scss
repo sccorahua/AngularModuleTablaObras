@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 14%;
+  }
+
+  .mouse-select{
+    cursor: pointer;
+  }
+
+  .center-items{
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-3{
+    transform: scale(1.5);
+  }
+
+  .pointer{
+    cursor: pointer;
+    text-decoration: none;
+  }
